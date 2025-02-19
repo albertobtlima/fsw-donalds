@@ -32,7 +32,7 @@ const ConsumptionMetholdOption = ({
           />
         </div>
 
-        <Button variant="secondary" className="rounded-full">
+        <Button variant="secondary" className="rounded-full" asChild>
           <Link href={`/${slug}/menu?consumptionMethold=${option}`}>
             {buttonText}
           </Link>
