@@ -5,21 +5,21 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
-interface ConsumptionMetholdOptionProps {
+interface ConsumptionMethodOptionProps {
+  slug: string;
   imageUrl: string;
-  ImageAlt: string;
+  imageAlt: string;
   buttonText: string;
   option: ConsumptionMethod;
-  slug: string;
 }
 
-const ConsumptionMetholdOption = ({
+const ConsumptionMethodOption = ({
+  slug,
+  imageAlt,
   imageUrl,
-  ImageAlt,
   buttonText,
   option,
-  slug,
-}: ConsumptionMetholdOptionProps) => {
+}: ConsumptionMethodOptionProps) => {
   return (
     <Card>
       <CardContent className="flex flex-col items-center gap-8 py-8">
@@ -27,13 +27,12 @@ const ConsumptionMetholdOption = ({
           <Image
             src={imageUrl}
             fill
-            alt={ImageAlt}
+            alt={imageAlt}
             className="object-contain"
           />
         </div>
-
         <Button variant="secondary" className="rounded-full" asChild>
-          <Link href={`/${slug}/menu?consumptionMethold=${option}`}>
+          <Link href={`/${slug}/menu?consumptionMethod=${option}`}>
             {buttonText}
           </Link>
         </Button>
@@ -42,4 +41,4 @@ const ConsumptionMetholdOption = ({
   );
 };
 
-export default ConsumptionMetholdOption;
+export default ConsumptionMethodOption;
